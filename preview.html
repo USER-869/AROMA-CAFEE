@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AROMA CAFE | Coffee & Good Vibes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#faf7f2;
+color:#333;
+line-height:1.6;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+.container{
+width:min(1150px,90%);
+margin:auto;
+}
+
+/* Navigation */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(44,28,17,.92);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+color:#fff;
+font-size:28px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.logo span{
+color:#d4a762;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#d4a762;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80") center/cover;
+display:flex;
+align-items:center;
+color:white;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 34px;
+background:#d4a762;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+background:#b17b38;
+transform:translateY(-3px);
+}
+
+/* Sections */
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:15px;
+color:#4b2e1f;
+}
+
+.section-subtitle{
+text-align:center;
+margin-bottom:60px;
+color:#777;
+}
+
+/* About */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.about h3{
+font-size:34px;
+margin-bottom:15px;
+color:#4b2e1f;
+}
+
+.about p{
+margin-bottom:15px;
+}
+
+/* Menu */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.menu-card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.menu-card:hover{
+transform:translateY(-8px);
+}
+
+.menu-card h3{
+color:#4b2e1f;
+margin-bottom:10px;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+color:#c58b41;
+margin-top:15px;
+}
+
+/* Features */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.feature{
+padding:35px;
+background:white;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.feature span{
+font-size:50px;
+display:block;
+margin-bottom:15px;
+}
+
+/* Testimonials */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.testimonial{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.testimonial h4{
+margin-top:15px;
+color:#4b2e1f;
+}
+
+/* Contact */
+
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.contact-box{
+background:white;
+padding:35px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.contact-box p{
+margin:15px 0;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+font-family:inherit;
+}
+
+.contact button{
+width:100%;
+border:none;
+cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+background:#2c1c11;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+gap:15px;
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">AROMA<span>CAFE</span></div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>Fresh Coffee.<br>Warm Conversations.</h1>
+
+<p>
+Your favorite neighborhood café just steps away from campus.
+Grab a handcrafted coffee, delicious snacks, and the perfect study spot.
+</p>
+
+<a href="#menu" class="btn">Explore Our Menu</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">About Aroma Cafe</h2>
+
+<p class="section-subtitle">
+A cozy place where students, friends, and coffee lovers meet.
+</p>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80">
+
+<div>
+
+<h3>Made with Passion</h3>
+
+<p>
+Located just minutes from the college campus, Aroma Cafe offers
+premium coffee, fresh pastries, quick bites, and a peaceful atmosphere
+for studying or catching up with friends.
+</p>
+
+<p>
+Free Wi-Fi, comfortable seating, relaxing music, and friendly service
+make us the perfect destination from morning coffee to evening snacks.
+</p>
+
+<a href="#contact" class="btn">Visit Today</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Menu -->
+
+<section id="menu">
+
+<div class="container">
+
+<h2 class="section-title">Popular Menu</h2>
+
+<p class="section-subtitle">
+Freshly brewed every day.
+</p>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+<h3>☕ Cappuccino</h3>
+<p>Rich espresso with steamed milk and silky foam.</p>
+<div class="price">$4.50</div>
+</div>
+
+<div class="menu-card">
+<h3>🥐 Butter Croissant</h3>
+<p>Fresh baked every morning.</p>
+<div class="price">$3.20</div>
+</div>
+
+<div class="menu-card">
+<h3>🍫 Mocha Latte</h3>
+<p>Espresso blended with premium chocolate.</p>
+<div class="price">$5.25</div>
+</div>
+
+<div class="menu-card">
+<h3>🥪 Veggie Sandwich</h3>
+<p>Fresh vegetables, cheese, and herbs.</p>
+<div class="price">$6.80</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Why Students Love Us</h2>
+
+<div class="features">
+
+<div class="feature">
+<span>📶</span>
+<h3>Free Wi-Fi</h3>
+<p>Study comfortably with high-speed internet.</p>
+</div>
+
+<div class="feature">
+<span>📚</span>
+<h3>Study Friendly</h3>
+<p>Quiet corners and charging stations.</p>
+</div>
+
+<div class="feature">
+<span>🎵</span>
+<h3>Relaxing Atmosphere</h3>
+<p>Soft music and cozy interiors.</p>
+</div>
+
+<div class="feature">
+<span>🧁</span>
+<h3>Fresh Bakery</h3>
+<p>Daily baked pastries and desserts.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Testimonials -->
+
+<section id="reviews">
+
+<div class="container">
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+
+<p>
+★★★★★ <br><br>
+"The perfect place to study before exams. Amazing coffee and super friendly staff!"
+</p>
+
+<h4>— Emily</h4>
+
+</div>
+
+<div class="testimonial">
+
+<p>
+★★★★★ <br><br>
+"My favorite coffee shop near campus. Their mocha is unbeatable."
+</p>
+
+<h4>— Jason</h4>
+
+</div>
+
+<div class="testimonial">
+
+<p>
+★★★★★ <br><br>
+"Comfortable seating, great food, and excellent Wi-Fi. Highly recommended!"
+</p>
+
+<h4>— Sophia</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">Visit Aroma Cafe</h2>
+
+<p class="section-subtitle">
+We'd love to serve you.
+</p>
+
+<div class="contact">
+
+<div class="contact-box">
+
+<h3>Contact Information</h3>
+
+<p>📍 123 College Street</p>
+
+<p>📞 +1 (555) 123-4567</p>
+
+<p>✉ hello@aromacafe.com</p>
+
+<p>🕒 Mon–Sun : 8:00 AM – 10:00 PM</p>
+
+</div>
+
+<div class="contact-box">
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 AROMA CAFE • Crafted with ❤️ for Coffee Lovers
+</p>
+
+</footer>
+
+</body>
+</html>
